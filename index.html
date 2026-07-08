@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Engineering Lab Portfolio</title>
+    <meta
+      name="description"
+      content="A personal engineering lab portfolio showcasing projects, systems, prototypes, and experiments."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Engineering Lab home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Lab / 2026</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#projects">Works</a>
+        <a href="#bench">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          src="assets/engineering-lab-hero.png"
+          alt="Engineering workbench with laptop, prototypes, sketches, and instrument lights"
+        />
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Arjun Prabhakaran · selected progress · 2026</p>
+          <h1 id="hero-title">Good systems start with a <span>careful experiment</span>.</h1>
+          <p class="hero-copy">
+            A personal engineering lab for low-latency systems, market data experiments,
+            quantum error mitigation, alternative alpha, and automation research.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://github.com/poenitens-42">View GitHub <span aria-hidden="true">→</span></a>
+            <a class="button secondary" href="#projects">View work</a>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Lab snapshot">
+          <div>
+            <span class="metric">Systems</span>
+            <span class="label">C · C++20 · Python</span>
+          </div>
+          <div>
+            <span class="metric">Markets</span>
+            <span class="label">HFT · alpha · data</span>
+          </div>
+          <div>
+            <span class="metric">Research</span>
+            <span class="label">quantum · CV · runtime</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="intro band" aria-label="Engineering focus">
+        <div>
+          <p class="section-kicker">Selected practice</p>
+          <h2>Proofs of work across performance engineering and applied research.</h2>
+        </div>
+        <p>
+          This is a collection of progress: experiments that start as questions, then
+          become benchmarks, models, handlers, notebooks, and working prototypes.
+        </p>
+      </section>
+
+      <section id="projects" class="projects">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Selected work</p>
+            <h2>Project index</h2>
+          </div>
+          <div class="filters" aria-label="Project filters">
+            <button class="filter is-active" type="button" data-filter="all">All</button>
+            <button class="filter" type="button" data-filter="software">Systems</button>
+            <button class="filter" type="button" data-filter="hardware">Markets</button>
+            <button class="filter" type="button" data-filter="research">Study</button>
+          </div>
+        </div>
+
+        <div class="project-grid" id="project-grid" aria-live="polite">
+          <p class="loading-state">Loading project index...</p>
+        </div>
+      </section>
+
+      <section id="bench" class="bench band">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Process</p>
+            <h2>Small loops. Clear artifacts. Useful systems.</h2>
+          </div>
+        </div>
+        <div class="bench-grid">
+          <div class="bench-item">
+            <span class="bench-index">01</span>
+            <h3>Problem frame</h3>
+            <p>Define the user, system constraint, and the measurable change the project should create.</p>
+          </div>
+          <div class="bench-item">
+            <span class="bench-index">02</span>
+            <h3>Prototype loop</h3>
+            <p>Build the smallest credible version, instrument it, and keep the learning cycle tight.</p>
+          </div>
+          <div class="bench-item">
+            <span class="bench-index">03</span>
+            <h3>Operational polish</h3>
+            <p>Document tradeoffs, add observability, and make the system comfortable to maintain.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <p class="section-kicker">Next experiment</p>
+        <h2>Have a system, prototype, or product idea worth building?</h2>
+        <a class="button primary" href="https://github.com/poenitens-42">github.com/poenitens-42</a>
+      </section>
+    </main>
+
+    <script src="projects.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
