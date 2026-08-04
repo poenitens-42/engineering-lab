@@ -366,11 +366,27 @@ h3 a:hover {
   border-bottom: 1px solid var(--line);
   background: linear-gradient(180deg, rgba(244, 240, 231, 0.035), rgba(65, 200, 179, 0.025));
   transition: background 160ms ease, border-color 160ms ease;
+  cursor: pointer;
 }
 
-.project-card:hover {
+.project-card:hover,
+.project-card:focus-visible {
   border-color: rgba(200, 255, 66, 0.44);
   background: linear-gradient(180deg, var(--lime-soft), var(--teal-soft));
+  outline: none;
+}
+
+.devlog-hint {
+  margin-top: 14px;
+  color: var(--lime);
+  font-size: 0.76rem;
+  font-weight: 720;
+  opacity: 0.75;
+}
+
+.project-card:hover .devlog-hint,
+.project-card:focus-visible .devlog-hint {
+  opacity: 1;
 }
 
 .project-card.is-hidden {
@@ -417,6 +433,133 @@ dd {
   color: var(--ink);
   font-size: 0.92rem;
   font-weight: 680;
+}
+
+.devlog-open {
+  overflow: hidden;
+}
+
+.devlog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(14px, 4vw, 40px);
+  background: rgba(3, 7, 6, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.devlog-panel {
+  position: relative;
+  width: min(100%, 640px);
+  max-height: min(84vh, 780px);
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 4vw, 40px);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(180deg, var(--stage-top), var(--stage-bottom) 80%);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
+}
+
+.devlog-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  background: transparent;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.devlog-close:hover,
+.devlog-close:focus-visible {
+  border-color: var(--lime);
+  color: var(--lime);
+  outline: none;
+}
+
+.devlog-head {
+  padding-right: 40px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.devlog-head h2 {
+  margin: 6px 0 10px;
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+}
+
+.devlog-summary {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.devlog-repo-link {
+  display: inline-flex;
+  color: var(--teal);
+  font-weight: 680;
+  font-size: 0.86rem;
+}
+
+.devlog-repo-link:hover {
+  color: var(--lime);
+}
+
+.devlog-entries {
+  overflow-y: auto;
+  padding-right: 6px;
+  border-top: 1px solid var(--line);
+}
+
+.devlog-entries::-webkit-scrollbar {
+  width: 6px;
+}
+
+.devlog-entries::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+}
+
+.devlog-entry {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.devlog-entry:last-child {
+  border-bottom: none;
+}
+
+.devlog-entry-date {
+  margin: 0 0 6px;
+  color: var(--lime);
+  font-size: 0.74rem;
+  font-weight: 720;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.devlog-entry h3 {
+  margin: 0 0 6px;
+  font-size: 1.02rem;
+}
+
+.devlog-entry p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.devlog-empty {
+  padding: 22px 0;
+  margin: 0;
+  color: var(--muted);
 }
 
 .bench {
