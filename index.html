@@ -121,6 +121,19 @@
       </section>
     </main>
 
+    <div class="devlog-overlay" id="devlog-overlay" hidden>
+      <div class="devlog-panel" role="dialog" aria-modal="true" aria-labelledby="devlog-title">
+        <button class="devlog-close" id="devlog-close" type="button" aria-label="Close devlog">×</button>
+        <div class="devlog-head">
+          <p class="section-kicker" id="devlog-stack"></p>
+          <h2 id="devlog-title"></h2>
+          <p class="devlog-summary" id="devlog-summary"></p>
+          <a class="devlog-repo-link" id="devlog-repo-link" target="_blank" rel="noopener">View repo <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="devlog-entries" id="devlog-entries"></div>
+      </div>
+    </div>
+
     <script src="projects.js"></script>
     <script src="script.js"></script>
   </body>
