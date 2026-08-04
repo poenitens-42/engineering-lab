@@ -451,6 +451,10 @@ dd {
   backdrop-filter: blur(6px);
 }
 
+.devlog-overlay[hidden] {
+  display: none;
+}
+
 .devlog-panel {
   position: relative;
   width: min(100%, 640px);
