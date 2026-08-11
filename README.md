@@ -1,6 +1,6 @@
 # Engineering Lab Portfolio
 
-Minimal personal portfolio for Arjun Prabhakaran.
+Minimal personal portfolio for Me .
 
 ## Edit Projects
 
