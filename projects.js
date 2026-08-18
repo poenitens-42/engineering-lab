@@ -30,7 +30,7 @@ window.PORTFOLIO_PROJECTS = [
       "Limit order book engine with async TCP server, coroutine networking, RDTSC benchmarking, and O(1) price-level indexing.",
     detailLabel: "Result",
     detail: "Loopback RTT p50 around 21 microseconds",
-    fallbackUpdated: "August 11, 2026",
+    fallbackUpdated: "August 18, 2026",
     url: "https://github.com/poenitens-42/cpp-hft-project",
     log: [
       {
@@ -56,6 +56,12 @@ window.PORTFOLIO_PROJECTS = [
         title: "kdb+/q C API integration complete",
         body:
           "Added KdbClient (include/analytics + src/analytics) as a thin RAII wrapper around kdb+'s C API (k.h), isolated to a single translation unit so the rest of the codebase never touches k.h directly — just connect()/execute()/disconnect(). Handled the const-correctness mismatch (khpu/k take non-const S) with const_cast per KX's documented pattern. Fully decoupled from hft_app, so the core server/LOB/benchmark build and run with zero dependency on kdb+ being present. Also fixed kdb_test, which was previously mis-configured to share a main() with hft_app — now a separate executable that needs a live q process on localhost:5001 and fails cleanly with 'Failed to connect to q' when there isn't one."
+      },
+      {
+        date: "2026-08-18",
+        title: "ITCH 5.0 parser (itch_stats) parses a full real NASDAQ feed cleanly",
+        body:
+          "Built itch_stats to parse real ITCH 5.0 market data instead of the synthetic exchange simulator feed, as a step toward feeding the order book from actual exchange data. Ran it against a real 3.28GB NASDAQ BX ITCH file (S030220-v50-bx.txt): 109,386,091 messages parsed, 3,280,036,325 / 3,280,036,325 bytes consumed (full file, no leftover bytes), parse ended cleanly. Message type histogram breaks down as Add (A: 41.17M), Delete (D: 40.27M), Order Executed/Modified (U: 15.05M), Non-Displayed Add (N: 9.94M), Executed (E: 1.29M), Cancel (X: 1.14M), Trade (P: 384K), and smaller counts for F/Y/H/R/C/L/S/V message types. Stock Directory ('R') messages identified 8,909 distinct symbols. No bugs or surprises hit getting to this clean full-consumption parse on the first real run — a contrast to the earlier bench_client issue where a parsing/measurement bug wasn't caught until digging into the numbers."
       }
     ]
   },
